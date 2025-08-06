@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login-style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="form-box">
+            <h2>• Login •</h2>
+
+            <!-- Success Message -->
+            <div th:if="${successMsg}">
+                <p class="success" th:text="${successMsg}"></p>
+            </div>
+
+            <!-- Error Message -->
+            <div th:if="${ErrorMsg}">
+                <p class="error" th:text="${ErrorMsg}"></p>
+            </div>
+
+            <!-- Login Form -->
+            <form th:action="@{/loginform}" th:object="${user}" method="post">
+                <label for="email">Email</label>
+                <input type="email" id="email" th:field="*{email}" required />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" th:field="*{password}" required />
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <!-- Links -->
+            <p class="register-link">
+                Don’t have an account?
+                <a th:href="@{/regPage}">Register</a><br/>
+                <a href="index.html">Back to Home</a>
+            </p>
+        </div>
+    </div>
+	<script src="/js/form-validation.js"></script>
+</body>
+</html>

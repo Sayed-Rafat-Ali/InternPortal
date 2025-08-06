@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/admin-style.css}">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Intern<span>Portal</span> Admin</div>
+        <a th:href="@{/logout}" class="logout-btn">Logout</a>
+    </div>
+	
+	<div th:if="${message}" class="alert success" th:text="${message}"></div>
+
+    <div class="dashboard-container">
+        <div class="widgets">
+            <div class="widget">
+                <h3>Total Registrations</h3>
+                <p th:text="${totalRegistrations}">0</p>
+            </div>
+        </div>
+
+        <div class="user-management">
+            <h2>All Registered Applicants</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}">1</td>
+                        <td th:text="${user.name}">Name</td>
+                        <td th:text="${user.email}">Email</td>
+                        <td th:text="${user.phoneno}">Phone</td>
+                        <td>
+                            <a th:href="@{'/admin/view/' + ${user.id}}" class="action-btn">View</a>
+                            <a th:href="@{'/admin/delete/' + ${user.id}}" class="action-btn delete">Delete</a>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

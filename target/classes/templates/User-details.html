@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <link rel="stylesheet" href="/css/admin-style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Intern Portal - Admin</div>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="widget user-details-box">
+            <h2>User Details</h2>
+            <p><strong>ID:</strong> <span th:text="${user.id}"></span></p>
+            <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
+            <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+            <p><strong>Phone:</strong> <span th:text="${user.phoneno}"></span></p>
+
+            <a href="/admin/dashboard" class="action-btn">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

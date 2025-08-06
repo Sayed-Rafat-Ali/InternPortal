@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin - View Applicants</title>
+    <link rel="stylesheet" href="css/admin-style.css"> <!-- Link your CSS file -->
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>All Registered Applicants</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:text="${user.phoneno}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="/loginPage" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>

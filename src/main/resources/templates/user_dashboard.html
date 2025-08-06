@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard - Internship Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Internship Portal</a>
+        <div class="d-flex">
+            <a href="/logout" class="btn btn-outline-light">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Dashboard Content -->
+<div class="container mt-5">
+    <h2>Welcome, <span th:text="${user.name}">Intern</span>!</h2>
+    <p class="text-muted">This is your personalized intern dashboard.</p>
+
+    <div class="row mt-4">
+        <!-- Internship Status -->
+        <div class="col-md-4">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Internship Status</h5>
+                    <p><strong>Active</strong></p>
+                    <p>Start Date: <strong>12th Aug 2025</strong></p>
+                    <p>End Date: <strong>12th Nov 2025</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assigned Projects -->
+        <div class="col-md-4">
+            <div class="card border-success">
+                <div class="card-body">
+                    <h5 class="card-title">Your Projects</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Build Full Stack Portal - <em>In Progress</em></li>
+                        <li class="list-group-item">Fix bugs in Donation System - <em>Completed</em></li>
+                        <li class="list-group-item">Write REST APIs - <em>Pending</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Progress -->
+        <div class="col-md-4">
+            <div class="card border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Weekly Progress</h5>
+                    <p>Upload your weekly reports and view feedback.</p>
+                    <a href="#" class="btn btn-warning">Upload Report</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Download -->
+    <div class="mt-4">
+        <div class="card border-info">
+            <div class="card-body">
+                <h5 class="card-title">Internship Certificate</h5>
+                <p>Your certificate will be available after internship completion.</p>
+                <button class="btn btn-info" disabled>Download Certificate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
